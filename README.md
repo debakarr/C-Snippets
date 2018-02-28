@@ -1,5 +1,35 @@
 #### This repository contains few code snippets for C language which I thing might worth knowing.
 
+* Swap 2 variables without usin temporary variable
+
+Using '+' and '-':
+
+```C
+a = a + b;
+b = a - b;
+a = a - b;
+```
+
+OR
+
+Using '\*' and '/':
+
+```C
+a = a * b;
+b = a / b;
+a = a / b;
+```
+
+OR
+
+Using ^ (ex-or):
+
+```C
+a = a ^ b;
+b = a ^ b;
+a = a ^ b;
+```
+
 * Implementation of strlen
 
 ```C
@@ -135,7 +165,8 @@ The reson is that after puting the macross the if statement becomes something li
 ```C
 if(1){
 	free(p); 
-	p = NULL; printf("FIN");
+	p = NULL; 
+    printf("FIN");
 };
 ```
 
@@ -145,7 +176,8 @@ The semicolon at the end cause the error. The Best way to overcome this is to us
 if(1)
 do {
 	free(p); 
-	p = NULL; printf("FIN");
+	p = NULL; 
+    printf("FIN");
 }while(0);
 ```
 
@@ -169,3 +201,53 @@ int main (){
 }
 ```
 
+* Find size of a variable without using **sizeof** operator
+
+
+
+```C
+#include <stdio.h>
+#define mySizeof(x) (((x *) 0) + 1)
+
+int main(){
+    printf("%zd\n", mySizeof(char));
+    printf("%zd\n", mySizeof(int));
+    printf("%zd\n", mySizeof(float));
+    printf("%zd\n", mySizeof(double));
+}
+```
+
+* Swap two nibbles in a byte
+
+before swap:
+
+18 -> 0001 0010
+
+after swap:
+
+0010 0001 -> 33 
+
+```C
+#include <stdio.h>
+#define swap(x) (((x & 0xF) << 4 ) | ((x&0xF0) >> 4))
+
+int main(){
+    printf("%d\n", swap(18));
+}
+```
+
+* Find middle node in a singly linked list
+
+The idea is to take two pointers pointing to head. Now increament 1st pointer by 1 and 2nd pointer by 2 in each iteration. When the 2nd pointer reach the end of the linked list then the first pointer is pointing to middle node.
+
+```
+Node *middleNode(Node *head){
+    Node *p1 = head, *p2 = head;
+
+    while(p2 != 0){
+        p1 = p1->next;
+        p2 = (p2->next) ? p2->next->next : 0;
+    }
+
+    return p1;
+}
