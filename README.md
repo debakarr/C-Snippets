@@ -83,7 +83,7 @@ int c = (a << 4) + (b >> 1)
 
 refer to this: https://stackoverflow.com/questions/791328/how-does-the-bitwise-complement-operator-work
 
-```
+```C
 #include <stdio.h>
 
 void complement(int i) {
