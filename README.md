@@ -1,5 +1,6 @@
 #### This repository contains few code snippets for C language which I thing might worth knowing.
 
+***
 * Swap 2 variables without using temporary variable
 
 Using '+' and '-':
@@ -30,6 +31,7 @@ b = a ^ b;
 a = a ^ b;
 ```
 
+***
 * Implementation of strlen
 
 ```C
@@ -46,6 +48,7 @@ int impStrlen (char *str) {
 }
 ```
 
+***
 * Check if string is palindrome or not
 
 ```C
@@ -62,6 +65,7 @@ int palindromeCheck (char *str){
 }
 ```
 
+***
 * Set or reset a specific bit in a given variable
 
 e.g. 
@@ -101,6 +105,7 @@ Output is:
 9
 2
 
+***
 * We can use bitwise operators in many situation
 
 Rewriting **int c = a \* 16 + b / 2;**
@@ -109,6 +114,7 @@ Rewriting **int c = a \* 16 + b / 2;**
 int c = (a << 4) + (b >> 1)
 ```
 
+***
 * Complement of integer without directly using **~**
 
 refer to this: https://stackoverflow.com/questions/791328/how-does-the-bitwise-complement-operator-work
@@ -127,6 +133,7 @@ int main (){
 }
 ```
 
+***
 * Multiline macros
 
 It is best practice to set a pointer to NULL after freeing it. We can use a macros for this. Below is the code for the same. 
@@ -201,6 +208,7 @@ int main (){
 }
 ```
 
+***
 * Find size of a variable without using **sizeof** operator
 
 
@@ -217,6 +225,7 @@ int main(){
 }
 ```
 
+***
 * Swap two nibbles in a byte
 
 before swap:
@@ -236,6 +245,7 @@ int main(){
 }
 ```
 
+***
 * Find middle node in a singly linked list
 
 The idea is to take two pointers pointing to head. Now increament 1st pointer by 1 and 2nd pointer by 2 in each iteration. When the 2nd pointer reach the end of the linked list then the first pointer is pointing to middle node.
@@ -251,3 +261,25 @@ Node *middleNode(Node *head){
 
     return p1;
 }
+```
+
+***
+* Check if the number is power of 2
+
+Any number which is power of 2  and the number 1 less returns 0 when we apply a bitwise AND (&) operation.
+
+e.g. 
+8 -> 1000
+7 -> 0111
+
+  1000
+& 0111
+______
+  0000
+
+```C
+checkIfPowerOf2(int n){
+    return(!(n & (n-1)));
+}
+```
+
