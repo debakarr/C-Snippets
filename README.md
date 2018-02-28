@@ -102,7 +102,9 @@ int main (){
 ```
 
 Output is:
+
 9
+
 2
 
 ***
@@ -269,12 +271,17 @@ Node *middleNode(Node *head){
 Any number which is power of 2  and the number 1 less returns 0 when we apply a bitwise AND (&) operation.
 
 e.g. 
+
 8 -> 1000
+
 7 -> 0111
 
   1000
+
 & 0111
-______
+
+======
+
   0000
 
 ```C
