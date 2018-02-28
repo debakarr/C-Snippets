@@ -1,6 +1,6 @@
 #### This repository contains few code snippets for C language which I thing might worth knowing.
 
-* Swap 2 variables without usin temporary variable
+* Swap 2 variables without using temporary variable
 
 Using '+' and '-':
 
@@ -127,9 +127,9 @@ int main (){
 }
 ```
 
-* Multiline macross
+* Multiline macros
 
-It is best practice to set a pointer to NULL after freeing it. We can use a macross for this. Below is the code for the same. 
+It is best practice to set a pointer to NULL after freeing it. We can use a macros for this. Below is the code for the same. 
 
 ```C
 #include <stdio.h>
@@ -160,7 +160,7 @@ In function 'main':
 
 why so?
 
-The reson is that after puting the macross the if statement becomes something like this:
+The reson is that after puting the macros the if statement becomes something like this:
 
 ```C
 if(1){
@@ -240,7 +240,7 @@ int main(){
 
 The idea is to take two pointers pointing to head. Now increament 1st pointer by 1 and 2nd pointer by 2 in each iteration. When the 2nd pointer reach the end of the linked list then the first pointer is pointing to middle node.
 
-```
+```C
 Node *middleNode(Node *head){
     Node *p1 = head, *p2 = head;
 
