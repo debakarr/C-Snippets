@@ -1,4 +1,6 @@
-#### This repository contains few code snippets for C language which I thing might worth knowing.
+### This repository contains few code snippets for C language which I thing might worth knowing.
+
+#### If you like this please considering giving it a :star: (top right) :sweat_smile:
 
 ***
 
