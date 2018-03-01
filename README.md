@@ -417,3 +417,77 @@ int main(){
 Output: 1111000101
 
 ***
+
+* **Check if implemetation of shift operator (>>) follows logical shift or arithematic shift.**
+
+The results are implementation-dependent for right shifts of signed values.
+
+**Logical right shift**: 1 bit shifts all the bits to the right and fills in the leftmost bit with a '0'. 
+
+**Arithmetic right shift**:  1 bit shifts all the bits to the right and fills in the leftmost bit with original value of the right mst bit shifted.
+
+e.g.
+
+1 bit Logical Right Shift 
+
+```C
+unsigned char x = x >> 1;
+```
+
+Before:  00010000    ( = 16 decimal )
+
+After:   00001000    ( = 8 decimal )
+
+Before:  01001001
+
+After:   00100100    ( one bit is "lost". LSB of original data)
+
+Before:  10000001    ( = 129 decimal )
+
+After:   01000000    ( = 64 decimal - one bit is "lost")
+
+1 bit Arithmetic Right Shift
+
+```C
+signed char x = x >> 1;
+```
+
+Before:  00001000    ( = 8 decimal )
+
+After:   00000100    ( = 4 decimal )
+
+Before:  10000011    ( = -125 decimal in two's complement )
+
+After:   11000001    ( = -63 decimal )
+
+After:   11100000    ( = -32 decimal )
+
+After:   11110000    ( = -16 decimal )
+
+After:   11111000    ( = -8 decimal )
+
+After:   11111100    ( = -4 decimal )
+
+After:   11111110    ( = -2 decimal )
+
+After:   11111111    ( = -1 decimal )
+
+After:   11111111    ( = -1 decimal )
+
+More info: http://teaching.idallen.com/dat2343/09f/notes/04bit_operations_shift.txt
+
+Use:
+
+Logical shift: Used in serial data communication to transfer the data bit by bit or for multiplying unsigned numbers by power of 2.
+
+Arithematic shift: Used in signed arithmetic computations.
+
+So the program?
+
+```C
+int main(){
+	((-1 >> 1) < 0) ? printf("Arithematic shift") : printf("Logical shift");
+}
+```
+
+***
