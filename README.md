@@ -221,7 +221,7 @@ int main (){
 
 ***
 
-* **Find size of a variable without using** _sizeof_ operator**
+* **Find size of a variable without using** _sizeof_ **operator**
 
 
 
