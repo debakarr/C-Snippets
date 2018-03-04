@@ -4,6 +4,10 @@
 
 ***
 
+##### General code snippets
+
+***
+
 * **Swap 2 variables without using temporary variable**
 
 Using '+' and '-':
@@ -493,3 +497,25 @@ int main(){
 ```
 
 ***
+
+##### Some mistakes
+
+```C
+#include <stdio.h>
+int main(){
+    int * const i = 20;
+    
+    printf("%d", *++i);
+
+    return 0;
+}
+```
+
+```diff
+- error: increment of read-only variable 'i'
+```
+
+Reason is that we are trying to change the value of constant pointer.
+
+***
+
