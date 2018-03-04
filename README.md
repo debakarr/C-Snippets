@@ -6,7 +6,6 @@
 
 ##### General code snippets
 
-***
 
 * **Will this code run? If yes what is it going to return?**
 
@@ -562,6 +561,23 @@ int a = 7;
 ```
 
 **b+1 and 4 both are not lvalue which makes them rvalue.** 
+
+***
+
+* **Output of the code?**
+
+```C
+int main(){
+    int i = 1;
+    int *ptr = &i;
+    
+    printf("%d", ++*ptr++);
+}
+```
+
+**Output:** 2
+
+When we combine prefix ++ with dereferencing operator * we get a result which is a *lvalue* i.e (++\*ptr) and the value is now 2. Now postfix ++ needs a lvalue which is available so it's fine. Though there is no immediate effect of postfix ++, hence the value printed is still 2.
 
 ***
 
