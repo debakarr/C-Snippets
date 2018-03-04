@@ -577,7 +577,7 @@ int main(){
 
 **Output:** 2
 
-When we combine prefix ++ with dereferencing operator * we get a result which is a *lvalue* i.e (++\*ptr) and the value is now 2. Now postfix ++ needs a lvalue which is available so it's fine. Though there is no immediate effect of postfix ++, hence the value printed is still 2.
+When we combine prefix **++** with dereferencing operator **\*** we get a result which is a *lvalue* i.e **(++\*ptr)** and the value is now **2**. Now postfix ++ needs a *lvalue* which is available so it's fine. Though there is no immediate effect of postfix ++, hence the value printed is still **2**.
 
 ***
 
