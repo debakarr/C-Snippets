@@ -597,7 +597,7 @@ Reason:
 
 ~i = -4
 
-+~i does not have any effect because it is **dummy operator** in C.
++~i does not have any effect because **+** is **dummy operator** in C.
 
 -+~i = 4
 
