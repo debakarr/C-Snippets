@@ -581,6 +581,32 @@ When we combine prefix **++** with dereferencing operator **\*** we get a result
 
 ***
 
+* **Output of the code?**
+
+```C
+int main(){
+    int i = 3;
+
+    printf("%d", ~!-+~i);
+}
+```
+
+**Output:** -1
+
+Reason:
+
+~i = -4
+
++~i does not have any effect because it is **dummy operator** in C.
+
+-+~i = 4
+
+!-+~i = 0 i.e. negation of any non zero value is 0
+
+~!-+~i = -1 i.e. ~0 = -1
+
+***
+
 ##### Some mistakes
 
 ```C
