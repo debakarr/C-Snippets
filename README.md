@@ -8,6 +8,18 @@
 
 ***
 
+* **Will this code run? If yes what is it going to return?**
+
+```C
+int main(){
+    printf("Hello World!");
+}
+```
+
+**Answer:** Yes this will run in C (not C++). C compiler will create an implicit declaration for the function printf(), compile this code into an object file.
+
+***
+
 * **Swap 2 variables without using temporary variable**
 
 Using '+' and '-':
@@ -498,6 +510,61 @@ int main(){
 
 ***
 
+* **Output of the code?**
+
+```C
+int main(){
+    printf("%d\n", 1 < 2 < 3);
+    printf("%d\n", 3 > 2 > 1);
+}
+```
+
+**Output:**
+```
+1
+0
+```
+
+For 1st printf(), ( 1 < 2 ) is 1 and ( 1 < 3 ) is true hence 1 is printed.
+For 2nd printf(), ( 3 > 2) is 1 and (1 > 1) is false (0), and hence 0 is printed.
+
+***
+
+* **Output of the code?**
+
+```C
+int main(){
+    int i = 1;
+    
+    printf("%d", ++i++);
+}
+```
+
+```diff
+- error: lvalue required as increment operand
+```
+
+(++i) is a *rvalue* expression and postfix ++ requires an *lvalue*, hence error.
+
+Generally *lvalue* is objects that occupies some identifiable memory location.
+
+eg.
+
+```C
+int a = 7;
+```
+
+**a** is a lvalue
+
+```C
+4 = b;       // error!
+(b + 1) = 4; // error!
+```
+
+**b+1 and 4 both are not lvalue which makes them rvalue.** 
+
+***
+
 ##### Some mistakes
 
 ```C
@@ -515,7 +582,35 @@ int main(){
 - error: increment of read-only variable 'i'
 ```
 
-Reason is that we are trying to change the value of constant pointer.
+Reason: We are trying to change the value of constant pointer.
+
+***
+
+```C
+#include <stdio.h>
+
+int main(){
+    float f = 2.0 * 3.0 - 6.0 + 1.0;
+    
+    switch(f){
+        case 1.0:
+            printf("%f", 1.0);
+            break;
+        case 2.0:
+            printf("%f", 2.0);
+            break;
+        default:
+            printf("%f", f);
+    }
+}
+```
+
+```diff
+- error: switch quantity not an integer
+- error: case label does not reduce to an integer constant
+```
+
+Reason: Switch/case can only accept integers.
 
 ***
 
