@@ -15,7 +15,7 @@ int main(){
 }
 ```
 
-**Answer:** Yes this will run in C (not C++). C compiler will create an implicit declaration for the function printf(), compile this code into an object file.
+**Answer:** Yes this will run in C (not C++). C compiler will create an implicit declaration for the function printf(), compile this code into an object file. This is going to return 0. You can check it using ```echo $?```.
 
 ***
 
